@@ -1,11 +1,16 @@
-package views;
+package failed.views;
 
 import javax.swing.*;
 import java.awt.*;
-import controllers.RadioButtonController;
-import models.RadioButton;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class ButtonPanel extends JPanel {
+import failed.controllers.InfoController;
+import failed.controllers.RadioButtonController;
+import failed.models.RadioButton;
+
+public class ButtonPanel extends JPanel implements Observer {
     private final RadioButtonController radioButtonController;
     private final ButtonGroup buttonGroup;
 
@@ -40,10 +45,31 @@ public class ButtonPanel extends JPanel {
         JRadioButton jRadioButton = new JRadioButton(button.getLabel());
         jRadioButton.setSelected(button.getSelected());
 
-        jRadioButton.addActionListener(e -> radioButtonController.selectRadioButton(buttonIndex));
+        jRadioButton.addActionListener(e -> {
+            radioButtonController.selectRadioButton(buttonIndex);
+            updateButtons();
+        });
+
 
         buttonGroup.add(jRadioButton);
         add(jRadioButton);
     }
 
+    private void updateButtons() {
+        int selectedButtonIndex = radioButtonController.getSelectedRadioButtonIndex();
+        AtomicInteger index = new AtomicInteger();
+        buttonGroup.getElements().asIterator().forEachRemaining(abstractButton -> {
+            abstractButton.setSelected(index.get() == selectedButtonIndex);
+            index.getAndIncrement();
+
+        });
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        if (o instanceof InfoController) {
+            // Update the button panel
+            updateButtons();
+        }
+    }
 }

@@ -1,29 +1,22 @@
-import controllers.RadioButtonController;
-import models.RadioButton;
-import views.ButtonPanel;
+import failed.controllers.InfoController;
+import failed.controllers.RadioButtonController;
+import failed.controllers.TextFieldController;
+import failed.controllers.VolumeSliderController;
+import failed.models.RadioButton;
+import failed.models.TextField;
+import failed.models.VolumeSlider;
+import failed.views.ButtonPanel;
+import failed.views.ResetPanel;
+import failed.views.SliderPanel;
+import failed.views.TextFieldPanel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        RadioButtonController rb = new RadioButtonController();
-        rb.addRadioButton(new RadioButton("Option 1"));
-        rb.addRadioButton(new RadioButton("Option 2"));
-        rb.addRadioButton(new RadioButton("Option 3"));
-
-        ButtonPanel buttonPanel = new ButtonPanel(rb);
-        JFrame frame = new JFrame("Exercise 0");
-
-        TitledBorder titledBorder = BorderFactory.createTitledBorder("Select an option:");
-        buttonPanel.setBorder(titledBorder);
-        frame.add(buttonPanel);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-
-        frame.setVisible(true);
+        new MainWindow();
     }
 }

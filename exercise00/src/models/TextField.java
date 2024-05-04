@@ -1,17 +1,10 @@
 package models;
 
-public class TextField {
-    private String text;
+import javax.swing.*;
 
-    public TextField(String text) {
-        this.text = text;
-    }
+public class TextField extends JTextField {
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    public TextField() {
+        super();
     }
 }

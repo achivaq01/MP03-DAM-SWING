@@ -1,30 +1,11 @@
 package models;
 
-public class VolumeSlider {
-    private final int maxValue;
-    private final int minValue;
-    private int value;
+import javax.swing.*;
 
-    public VolumeSlider(int minValue, int maxValue, int value) {
-        this.minValue = minValue;
-        this.maxValue = maxValue;
-        this.value = value;
-    }
+public class VolumeSlider extends JSlider {
 
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-         this.value = value;
-    }
-
-    public int getMinValue() {
-        return minValue;
-    }
-
-    public int getMaxValue() {
-        return maxValue;
+    public VolumeSlider(int min, int max, int value) {
+        super(JSlider.HORIZONTAL, min, max, value);
     }
 
 }

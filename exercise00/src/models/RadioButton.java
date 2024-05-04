@@ -1,23 +1,11 @@
 package models;
 
-public class RadioButton {
-    private final String label;
-    private Boolean isSelected;
+import javax.swing.*;
+
+public class RadioButton extends JRadioButton {
 
     public RadioButton(String label) {
-        this.label = label;
-        isSelected = false;
+        super(label);
     }
 
-    public String getLabel() {
-        return label;
-    }
-
-    public void setSelected(Boolean isSelected) {
-        this.isSelected = isSelected;
-    }
-
-    public Boolean getSelected() {
-        return isSelected;
-    }
 }
