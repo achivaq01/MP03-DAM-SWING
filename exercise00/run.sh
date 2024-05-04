@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Exemple de funcionament: ./run.sh com.project.main.java.com.project.Main
-# on 'main.java.com.project.Main' és la classe amb 'main' que volem executar
+# Exemple de funcionament: ./run.sh com.project.main.java.com.project.Main.com.project.Main
+# on 'main.java.com.project.Main.com.project.Main' és la classe amb 'main' que volem executar
 
 # run.sh
 

@@ -1,12 +1,12 @@
 com/project/views/RemoveTaskPanel.class
-Main.class
 com/project/views/AddTaskPanel.class
 com/project/models/RemoveTaskButton.class
+com/project/Main.class
 com/project/controllers/RemoveTaskController.class
 com/project/views/TaskListPanel.class
 com/project/models/TaskInputGroup.class
 com/project/controllers/AddTaskController$1.class
 com/project/controllers/AddTaskController.class
-MainWindow.class
 com/project/models/TaskList.class
+com/project/MainWindow.class
 com/project/controllers/TaskListController.class
