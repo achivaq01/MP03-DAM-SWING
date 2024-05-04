@@ -12,12 +12,12 @@ public class MainWindow extends JFrame {
 
     public MainWindow() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(1000, 800);
 
         setLayout(new BorderLayout());
 
         TaskListController taskListController = new TaskListController();
-        RemoveTaskController removeTaskController = new RemoveTaskController();
+        RemoveTaskController removeTaskController = new RemoveTaskController(taskListController);
         AddTaskController addTaskController = new AddTaskController(taskListController);
 
         RemoveTaskPanel removeTaskPanel = new RemoveTaskPanel(removeTaskController);
@@ -25,8 +25,10 @@ public class MainWindow extends JFrame {
         TaskListPanel taskListPanel = new TaskListPanel(taskListController);
 
         add(addTaskPanel, BorderLayout.NORTH);
-        add(taskListPanel, BorderLayout.WEST);
+        add(taskListPanel, BorderLayout.CENTER);
         add(removeTaskPanel, BorderLayout.SOUTH);
+
+        setTitle("Exercise 01");
         setVisible(true);
     }
 }
