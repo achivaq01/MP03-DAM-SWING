@@ -1,6 +1,7 @@
 package com.project.views;
 
 import com.project.controllers.AddTaskController;
+import com.project.controllers.TaskListController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,9 +9,9 @@ import java.awt.*;
 public class AddTaskPanel extends JPanel {
     private final AddTaskController controller;
 
-    public AddTaskPanel() {
+    public AddTaskPanel(AddTaskController controller) {
         super();
-        controller = new AddTaskController();
+        this.controller = controller;
         initializeComponents();
         setVisible(true);
     }

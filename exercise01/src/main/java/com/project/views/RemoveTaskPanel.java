@@ -7,9 +7,9 @@ import javax.swing.*;
 public class RemoveTaskPanel extends JPanel {
     RemoveTaskController controller;
 
-    public RemoveTaskPanel() {
+    public RemoveTaskPanel(RemoveTaskController controller) {
         super();
-        controller = new RemoveTaskController();
+        this.controller = controller;
         initializeComponents();
         setVisible(true);
     }

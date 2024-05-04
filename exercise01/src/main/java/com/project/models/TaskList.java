@@ -8,12 +8,6 @@ public class TaskList extends JList<String> {
     public TaskList() {
         super();
         setModel(new DefaultListModel<>());
-        addTask("hellohellohellohellohellohellohellohellohello");
-        addTask("hello");
-        addTask("helhellohellolo");
-        addTask("hellhellohellohellohelloo");
-        addTask("hellhellohelloo");
-        addTask("hello");
 
     }
 

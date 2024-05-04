@@ -7,8 +7,8 @@ import javax.swing.*;
 public class TaskListPanel extends JPanel {
     TaskListController controller;
 
-    public TaskListPanel() {
-        controller = new TaskListController();
+    public TaskListPanel(TaskListController controller) {
+        this.controller = controller;
         initializeComponents();
         setVisible(true);
     }
