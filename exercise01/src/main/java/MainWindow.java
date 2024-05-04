@@ -1,4 +1,5 @@
-import com.project.views.AddTaskView;
+import com.project.views.AddTaskPanel;
+import com.project.views.RemoveTaskPanel;
 import com.project.views.TaskListPanel;
 
 import javax.swing.*;
@@ -11,8 +12,9 @@ public class MainWindow extends JFrame {
         setSize(500, 500);
 
         setLayout(new BorderLayout());
-        add(new AddTaskView(), BorderLayout.NORTH);
+        add(new AddTaskPanel(), BorderLayout.NORTH);
         add(new TaskListPanel(), BorderLayout.WEST);
+        add(new RemoveTaskPanel(), BorderLayout.SOUTH);
         setVisible(true);
     }
 }

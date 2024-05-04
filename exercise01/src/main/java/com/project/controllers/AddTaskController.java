@@ -1,22 +1,21 @@
 package com.project.controllers;
 
-import com.project.models.AddTaskButton;
-import com.project.models.TaskField;
+import com.project.models.TaskInputGroup;
+
+import javax.swing.*;
 
 public class AddTaskController {
-    private TaskField taskField;
-    private AddTaskButton addTaskButton;
+    private TaskInputGroup taskInputGroup;
 
     public AddTaskController() {
-        taskField = new TaskField();
-        addTaskButton = new AddTaskButton();
+        taskInputGroup = new TaskInputGroup();
     }
 
-    public TaskField getTaskField() {
-        return taskField;
+    public JTextField getTaskName() {
+        return taskInputGroup.getTaskName();
     }
 
-    public AddTaskButton getAddTaskButton() {
-        return addTaskButton;
+    public JButton getAddTaskButton() {
+        return taskInputGroup.getAddTaskButton();
     }
 }

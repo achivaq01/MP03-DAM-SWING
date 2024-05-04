@@ -5,10 +5,10 @@ import com.project.controllers.AddTaskController;
 import javax.swing.*;
 import java.awt.*;
 
-public class AddTaskView extends JPanel {
-    private AddTaskController controller;
+public class AddTaskPanel extends JPanel {
+    private final AddTaskController controller;
 
-    public AddTaskView() {
+    public AddTaskPanel() {
         super();
         controller = new AddTaskController();
         initializeComponents();
@@ -19,10 +19,10 @@ public class AddTaskView extends JPanel {
         setLayout(new BorderLayout());
         JPanel taskFieldPanel = new JPanel(new BorderLayout());
 
-        taskFieldPanel.add(controller.getTaskField(), BorderLayout.CENTER);
+        taskFieldPanel.add(controller.getTaskName(), BorderLayout.CENTER);
         Dimension preferredSize = taskFieldPanel.getPreferredSize();
         preferredSize.width *= 0.8;
-        controller.getTaskField().setPreferredSize(preferredSize);
+        controller.getTaskName().setPreferredSize(preferredSize);
 
         add(taskFieldPanel, BorderLayout.CENTER);
         add(controller.getAddTaskButton(), BorderLayout.EAST);
