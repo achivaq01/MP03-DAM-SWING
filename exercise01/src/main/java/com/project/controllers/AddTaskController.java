@@ -1,6 +1,7 @@
 package com.project.controllers;
 
 import com.project.models.TaskInputGroup;
+import com.project.models.TaskList;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -44,8 +45,10 @@ public class AddTaskController {
 
     private void addTask() {
         String taskName = taskInputGroup.getTaskName().getText();
+        TaskList taskList = taskListController.getTaskList();
         if (!taskName.isBlank()) {
-            taskListController.getTaskList().addTask(taskName);
+            taskList.addTask(taskName);
+            taskInputGroup.getTaskName().setText("");
         }
     }
 
