@@ -1,6 +1,8 @@
 package com.project.controllers;
 
 import com.project.models.MultiViewModel;
+import com.project.views.MultiViewPanel;
+import com.project.views.TextAreaView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -9,11 +11,20 @@ import java.util.List;
 
 public class MultiViewController {
     private MultiViewModel model;
+    private MultiViewPanel parentPanel;
 
     public MultiViewController() {
         model = new MultiViewModel();
         initializeModel();
         initializeSendButton();
+    }
+
+    public void setParentPanel(MultiViewPanel parentPanel) {
+        this.parentPanel = parentPanel;
+    }
+
+    public MultiViewPanel getParentPanel() {
+        return parentPanel;
     }
 
     private void initializeModel() {
@@ -45,6 +56,7 @@ public class MultiViewController {
     }
 
     private void initializeTimer() {
+        MultiViewController controller = this;
         Timer timer = new Timer(150, new ActionListener() {
             private int count = 0;
 
@@ -54,6 +66,8 @@ public class MultiViewController {
                 addProgressBarValue();
                 if (count * 150 >= 2500) {
                     ((Timer) e.getSource()).stop();
+                    parentPanel.add(new TextAreaView(controller));
+                    parentPanel.getLayout().next(parentPanel);
                 }
 
                 count++;

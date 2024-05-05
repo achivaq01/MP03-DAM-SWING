@@ -19,6 +19,7 @@ public class MainWindow extends JFrame {
     private void initialize() {
         MultiViewController controller = new MultiViewController();
         multiViewPanel = new MultiViewPanel(controller);
+        controller.setParentPanel(multiViewPanel);
         add(multiViewPanel);
     }
 }
